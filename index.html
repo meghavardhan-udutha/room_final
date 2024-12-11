@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Financial Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <ul>
+                <li><button onclick="showSection('section-1')" class="btn">Home</button></li>
+                <li><button onclick="showSection('section-2')" class="btn">Monthly Expenses</button></li>
+                <li><button onclick="showSection('section-4')" class="btn">Calculator</button></li>
+                <li><button onclick="showSection('section-3')" class="btn">Meal Plan</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="section-1">
+        <h1>Update Your Expenses</h1>
+
+        <!-- Room Expenses Table -->
+        <h2>Room Expenses</h2>
+        <table id="room-expenses">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Amount (₹)</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will be added here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="room-total">₹0</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- Combined Expenses Table -->
+        <h2>Combined Expenses</h2>
+        <table id="combined-expenses">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Amount (₹)</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will be added here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="combined-total">₹0</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- Food Expenses Table -->
+        <h2>Food Expenses</h2>
+        <table id="food-expenses">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Amount (₹)</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will be added here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="food-total">₹0</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- Mart Expenses Table -->
+        <h2>Mart Expenses</h2>
+        <table id="mart-expenses">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Amount (₹)</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entries will be added here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="mart-total">₹0</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- Form to Add Expense -->
+        <h2>Add New Expense</h2>
+        <form id="expense-form">
+            <label for="category">Category:</label>
+            <select id="category" required>
+                <option value="room">Room Expenses</option>
+                <option value="combined">Combined Expenses</option>
+                <option value="food">Food Expenses</option>
+                <option value="mart">Mart Expenses</option>
+            </select>
+
+            <label for="item">Item:</label>
+            <input type="text" id="item" required>
+
+            <label for="amount">Amount (₹):</label>
+            <input type="number" id="amount" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <button type="submit">Add Expense</button>
+        </form>
+    </section>
+
+    <section id="section-2" style="display: none;">
+        <!-- <nav>
+            <ul>
+                <li><a href="index.html">Back to Home</a></li> 
+            </ul>
+        </nav> -->
+    
+        <!-- <header>
+            <h1>Monthly Expenses</h1>
+        </header> -->
+    
+        <div class="container">
+            <!-- Room Expenses Section -->
+            <section id="room-expenses">
+                <h2>Room Expenses</h2>
+                <ul>
+                    <li>Rent: ₹7,500</li>
+                    <li>Current Bill: ₹500</li>
+                </ul>
+            </section>
+    
+            <!-- Combined Expenses Section -->
+            <section id="combined-expenses">
+                <h2>Combined Expenses (Gas, Drinking Water, Rice)</h2>
+                <ul>
+                    <li>Gas: ₹500</li>
+                    <li>Drinking Water: ₹300</li>
+                    <li>Rice: ₹2,400</li>
+                </ul>
+            </section>
+    
+            <!-- Other Expenses Section -->
+            <section id="other-expenses">
+                <h2>Other Expenses (Oil, Chicken, Vegetables, Dal)</h2>
+                <ul>
+                    <li>Oil: ₹600</li>
+                    <li>Chicken: ₹1,000</li>
+                    <li>Vegetables: ₹2,400</li>
+                    <li>Dal: ₹400</li>
+                </ul>
+            </section>
+    
+            <!-- Mart Expenses Section -->
+            <section id="mart-expenses">
+                <h2>Mart Expenses</h2>
+                <ul>
+                    <li>Odonil: ₹50</li>
+                    <li>Karam Spice: ₹100</li>
+                    <li>Salt: ₹30</li>
+                    <li>Toothpaste: ₹100</li>
+                    <li>Surf: ₹50</li>
+                    <li>Soap: ₹40</li>
+                </ul>
+            </section>
+    
+            <!-- Total Expenses Section -->
+            <section id="total-expenses">
+                <h2>Total Monthly Expenses</h2>
+                <p><strong>₹15,570</strong></p>
+            </section>
+        </div>
+    </section>
+
+    <section id="section-3" style="display: none;">
+        <!-- <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="expenses.html">Monthly Expenses</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="meals.html">Meal Plan</a></li>
+                </ul>
+            </nav>
+        </header> -->
+
+        <!-- Meal Plan Section -->
+        <section>
+            <h1>Weekly Meal Plan</h1>
+            <div class="meal-plan">
+                <table>
+                    <caption>Meal Plan for the Week</caption>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Breakfast & Lunch</th>
+                            <th>Dinner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>Tomato Curry</td>
+                            <td>Bottle Gourd Curry</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>Potato Curry</td>
+                            <td>Cyamopsis Tetragonoloba (Goruchikud) Curry</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Gourd Curry</td>
+                            <td>Egg (Boiled or Scrambled)</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>Tomato Curry</td>
+                            <td>Soya Chunks Curry</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>Potato Curry</td>
+                            <td>Egg (Boiled or Scrambled)</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>Gourd Curry</td>
+                            <td>Bottle Gourd Curry</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Dal</td>
+                            <td>Chicken Curry</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+
+    <section id="section-4" style="display: none;">
+        <!-- <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="expenses.html">Monthly Expenses</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+            </ul>
+        </nav> -->
+
+        <!-- Calculator Section -->
+        <div class="calculator-container">
+            <h1>Calculator</h1>
+            <div id="output" class="output">0</div>
+            <div id="calculator" class="calculator">
+                <button class="button" onclick="appendNumber(7)">7</button>
+                <button class="button" onclick="appendNumber(8)">8</button>
+                <button class="button" onclick="appendNumber(9)">9</button>
+                <button class="button operator" onclick="setOperator('+')">+</button>
+                <button class="button" onclick="appendNumber(4)">4</button>
+                <button class="button" onclick="appendNumber(5)">5</button>
+                <button class="button" onclick="appendNumber(6)">6</button>
+                <button class="button operator" onclick="setOperator('-')">-</button>
+                <button class="button" onclick="appendNumber(1)">1</button>
+                <button class="button" onclick="appendNumber(2)">2</button>
+                <button class="button" onclick="appendNumber(3)">3</button>
+                <button class="button operator" onclick="setOperator('*')">*</button>
+                <button class="button" onclick="appendNumber(0)">0</button>
+                <button class="button" onclick="clearOutput()">C</button>
+                <button class="button operator" onclick="setOperator('/')">/</button>
+                <button class="button equal" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
